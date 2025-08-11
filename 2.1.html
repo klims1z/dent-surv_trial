@@ -632,23 +632,23 @@
    //     } else obj[k]=v;
    //   });
       // show simple confirmation then offer download
-      if(confirm('Thank you — your responses have been captured locally. Click OK to download a JSON copy of your responses.')){
-        const blob = new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'survey_response.json'; a.click();
-        URL.revokeObjectURL(url);
-      }
-    });
+  //    if(confirm('Thank you — your responses have been captured locally. Click OK to download a JSON copy of your responses.')){
+    //    const blob = new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+      //  const url = URL.createObjectURL(blob);
+      //  const a = document.createElement('a');
+      //  a.href = url; a.download = 'survey_response.json'; a.click();
+       // URL.revokeObjectURL(url);
+     // }
+   // });
 
-    function downloadJSON(){
-      const data = new FormData(form);
-      const obj = {};
-      data.forEach((v,k)=>{ if(Object.prototype.hasOwnProperty.call(obj,k)){ if(!Array.isArray(obj[k])) obj[k]=[obj[k]]; obj[k].push(v);} else obj[k]=v; });
-      const blob = new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href=url; a.download='survey_responses.json'; a.click(); URL.revokeObjectURL(url);
-    }
+   // function downloadJSON(){
+   //   const data = new FormData(form);
+  //    const obj = {};
+  //    data.forEach((v,k)=>{ if(Object.prototype.hasOwnProperty.call(obj,k)){ if(!Array.isArray(obj[k])) obj[k]=[obj[k]]; obj[k].push(v);} else obj[k]=v; });
+  //    const blob = new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+  //    const url = URL.createObjectURL(blob);
+  //    const a = document.createElement('a'); a.href=url; a.download='survey_responses.json'; a.click(); URL.revokeObjectURL(url);
+  //  }
   </script>
 </body>
 </html>
